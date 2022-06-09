@@ -1,0 +1,42 @@
+MAIN -> STATEMENT STATEMENTS
+
+STATEMENTS -> STATEMENT STATEMENTS
+STATEMENTS -> ''
+
+STATEMENT -> CREATE
+STATEMENT -> INSERT
+STATEMENT -> SELECT
+STATEMENT -> UPDATE
+STATEMENT -> DELETE
+
+DELETE -> eliminar desde id dotcomma
+
+CREATE -> crear tabla id lpar ELEMENTS rpar dotcomma
+
+ELEMENTS -> ELEMENT
+ELEMENT -> id TYPE CONSTRUCT ELEMENT
+ELEMENT -> comma ELEMENT
+ELEMENT -> ''
+
+TYPE -> entero
+TYPE -> varchar
+TYPE -> serial
+
+CONSTRUCT -> no nulo CONSTRUCT
+CONSTRUCT -> clave primaria CONSTRUCT
+CONSTRUCT -> unico CONSTRUCT
+CONSTRUCT -> ''
+
+SELECT -> seleccionar times desde id dotcomma
+
+INSERT -> insertar dentro id lpar COLUMNAMES rpar valores lpar VALUES rpar dotcomma
+
+COLUMNAMES -> COLUMNAME
+COLUMNAME -> id COLUMNAME
+COLUMNAME -> comma COLUMNAME
+COLUMNAME -> ''
+
+VALUES -> VALUE
+VALUE -> TYPE VALUE
+VALUE -> comma VALUE
+VALUE -> ''

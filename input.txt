@@ -1,0 +1,7 @@
+crear tabla producto (
+    id serial clave primaria,
+    nombre_producto varchar unico no nulo,
+    correo varchar no nulo unico
+) ; 
+        
+insertar dentro producto (id, nombre_producto, correo) valores (Verdadero, 2, 3) ;
