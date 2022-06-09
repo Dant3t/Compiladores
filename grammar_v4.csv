@@ -1,0 +1,16 @@
+Nonterminal,UPDATE,eliminar,desde,id,dotcomma,crear,tabla,lpar,rpar,comma,entero,varchar,serial,boleano,no,nulo,clave,primaria,unico,seleccionar,times,insertar,dentro,valores,$
+MAIN,MAIN -> STATEMENT STATEMENTS,MAIN -> STATEMENT STATEMENTS,,,,MAIN -> STATEMENT STATEMENTS,,,,,,,,,,,,,,MAIN -> STATEMENT STATEMENTS,,MAIN -> STATEMENT STATEMENTS,,,
+STATEMENTS,STATEMENTS -> STATEMENT STATEMENTS,STATEMENTS -> STATEMENT STATEMENTS,,,,STATEMENTS -> STATEMENT STATEMENTS,,,,,,,,,,,,,,STATEMENTS -> STATEMENT STATEMENTS,,STATEMENTS -> STATEMENT STATEMENTS,,,STATEMENTS -> ''
+STATEMENT,STATEMENT -> UPDATE,STATEMENT -> DELETE,,,,STATEMENT -> CREATE,,,,,,,,,,,,,,STATEMENT -> SELECT,,STATEMENT -> INSERT,,,
+DELETE,,DELETE -> eliminar desde id dotcomma,,,,,,,,,,,,,,,,,,,,,,,
+CREATE,,,,,,CREATE -> crear tabla id lpar ELEMENTS rpar dotcomma,,,,,,,,,,,,,,,,,,,
+ELEMENTS,,,,ELEMENTS -> ELEMENT,,,,,ELEMENTS -> ELEMENT,ELEMENTS -> ELEMENT,,,,,,,,,,,,,,,
+ELEMENT,,,,ELEMENT -> id TYPE CONSTRUCT ELEMENT,,,,,ELEMENT -> '',ELEMENT -> comma ELEMENT,,,,,,,,,,,,,,,
+TYPE,,,,,,,,,,,TYPE -> entero,TYPE -> varchar,TYPE -> serial,TYPE -> boleano,,,,,,,,,,,
+CONSTRUCT,,,,CONSTRUCT -> '',,,,,CONSTRUCT -> '',CONSTRUCT -> '',,,,,CONSTRUCT -> no nulo CONSTRUCT,,CONSTRUCT -> clave primaria CONSTRUCT,,CONSTRUCT -> unico CONSTRUCT,,,,,,
+SELECT,,,,,,,,,,,,,,,,,,,,SELECT -> seleccionar times desde id dotcomma,,,,,
+INSERT,,,,,,,,,,,,,,,,,,,,,,INSERT -> insertar dentro id lpar COLUMNAMES rpar valores lpar VALUES rpar dotcomma,,,
+COLUMNAMES,,,,COLUMNAMES -> COLUMNAME,,,,,COLUMNAMES -> COLUMNAME,COLUMNAMES -> COLUMNAME,,,,,,,,,,,,,,,
+COLUMNAME,,,,COLUMNAME -> id COLUMNAME,,,,,COLUMNAME -> '',COLUMNAME -> comma COLUMNAME,,,,,,,,,,,,,,,
+VALUES,,,,,,,,,VALUES -> VALUE,VALUES -> VALUE,VALUES -> VALUE,VALUES -> VALUE,VALUES -> VALUE,VALUES -> VALUE,,,,,,,,,,,
+VALUE,,,,,,,,,VALUE -> '',VALUE -> comma VALUE,VALUE -> TYPE VALUE,VALUE -> TYPE VALUE,VALUE -> TYPE VALUE,VALUE -> TYPE VALUE,,,,,,,,,,,
