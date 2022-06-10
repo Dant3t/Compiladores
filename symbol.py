@@ -7,22 +7,25 @@ current_function = None
 
 
 class insert_table_node:
-    def __init__(self, identifier, table_name = None, typ = None, columna = None):
+    def __init__(self, identifier, table_name, id_insert = None, typ = None, columna = None):
         self.identifier = identifier
         self.table_name = table_name
+        self.id         = id_insert
+
         self.type       = typ
         self.columna    = columna
 
-    def set_type(self, typ):
+    def set_type(self, typ, id_insert = None):
         self.type       = typ
+        self.id         = id_insert
 
 class symbol_table_node:
     def __init__(self, identifier, typ, category, father = None, line = None):        
-        self.identifier = identifier
-        self.type = typ # tipo de dato
-        self.category = category # funcion o variable
-        self.line = line
-        self.father = father # a q función pertenece
+        self.identifier  = identifier
+        self.type        = typ # tipo de dato
+        self.category    = category # funcion o variable
+        self.line        = line
+        self.father      = father # a q función pertenece
 
 symbol_table = []
 
@@ -136,6 +139,8 @@ def column_total_insert(node,identifier=None):
 def column_total_values(identifier):
     global valores_a_insertar 
     for symbol in table_values:
+        if symbol.type == None:
+            continue
         if symbol.table_name == identifier:
             # table_values.remove(symbol)
             valores_a_insertar+=1
@@ -177,14 +182,14 @@ def find_var_insert(node):
         # print(valores_a_insertar, columnas_tabla, columnas_insert)
 
         if valores_a_insertar != columnas_tabla or valores_a_insertar != columnas_insert or columnas_tabla != columnas_insert:
-            print("ERROR: SINTAX INSERT DATA")
+            print("ERROR: SINTAX DEMACIADAS O MUY POCAS COLUMNAS")
             exit()
         
         columnas_insert    = 0
         valores_a_insertar = 0
         columnas_tabla     = 0
 
-        func_insert_table(table_values, symbol_table)
+        # func_insert_table(table_values, symbol_table)
 
     if node.symbol.symbol == 'COLUMNAME' and node.children[0].symbol.symbol != 'comma' and node.children[0].symbol.symbol != 'e':
         # print(node.children[0].lexeme)
@@ -219,8 +224,8 @@ def func_insert_table(table_values, symbol_table):
             if symbol.father == value.table_name and symbol.identifier == value.identifier:
                 
                 if symbol.type == value.type:
-                    print(symbol.type, value.type)
-                    print(symbol.identifier, value.identifier)
+                    # print(symbol.type, value.type)
+                    # print(symbol.identifier, value.identifier)
                     table_values.remove(value)
                     result = True
                     break

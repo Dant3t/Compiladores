@@ -1,17 +1,20 @@
 crear tabla producto (
     id entero clave primaria,
     cantidad entero unico no nulo,
-    existe boleano
+    existe boleano,
+    ent entero
 ) ; 
 
 
-insertar dentro producto (cantidad, id, existe) valores (1, verdadero, verdadero) ;
+insertar dentro producto (cantidad, id, existe, ent) valores (1, 2, verdadero, 4) ;
+
 
 crear tabla clientes (
     id entero,
     producto boleano
 ) ;
 
+insertar dentro clientes (id, producto) valores (1, verdadero) ;
 
 
 
