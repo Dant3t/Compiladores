@@ -1,3 +1,4 @@
+from glob import glob
 from itertools import count
 from pickle import FALSE
 
@@ -63,6 +64,10 @@ def find_var_declaration(node):
     # if node.symbol.symbol == 'dotcomma' and node.father.symbol.symbol == 'CREATE':
     #     remove_symbol(current_function)  # eliminar todos los simbolos de current_function
     #     current_function = None
+
+    if node.symbol.symbol == 'dotcomma' and node.father.symbol.symbol == 'INSERT':
+        if not exists_table(current_function):
+            print("ERROR: TABLA NO EXISTENTE")
   
     if node.symbol.symbol == 'id':
         # preguntamos si el hermano es un type
@@ -115,31 +120,30 @@ def find_symbol_in_table(identifier, table_name):
             return symbol
 
 def column_total_table(identifier):
-    count = 0
+    global columnas_tabla
     for symbol in symbol_table:
         if symbol.identifier == identifier:
             continue
 
         if symbol.father == identifier:
-            count+=1
-    return count
+            columnas_tabla+=1
 
 def column_total_insert(node,identifier=None):
-    global count
+    global columnas_insert
     for nod in node.children:
         if nod.symbol.symbol == 'dentro':
-            count-=1
+            columnas_insert-=1
 
         if nod.symbol.symbol == 'id':
-            count+=1
+            columnas_insert+=1
         column_total_insert(nod, identifier)
 
 def column_total_values(identifier):
-    count = 0
+    global valores_a_insertar 
     for symbol in table_values:
         if symbol.table_name == identifier:
-            count+=1
-    return count
+            # table_values.remove(symbol)
+            valores_a_insertar+=1
 
 def add_insert(typ, table_name, columna):
     node_insert  = insert_table_node(typ, table_name, columna)
@@ -147,12 +151,15 @@ def add_insert(typ, table_name, columna):
 
 columna = 0
 table_name = None
-count = 0
+
+columnas_insert    = 0
+valores_a_insertar = 0
+columnas_tabla     = 0
 
 def find_var_insert(node):
     global columna
     global table_name 
-    global count
+    global columnas_insert, columnas_tabla, valores_a_insertar
 
     if node.symbol.symbol == 'INSERT':
         table_name = node.children[2].lexeme
@@ -162,17 +169,24 @@ def find_var_insert(node):
             exit()
     
     if node.symbol.symbol == 'dotcomma' and node.father.symbol.symbol == 'INSERT':
-        valores_a_insertar = column_total_values(table_name)
-        columnas_tabla     = column_total_table(table_name)
+        # valores_a_insertar = column_total_values(table_name)
+        # columnas_tabla     = column_total_table(table_name)
+        column_total_values(table_name)
+        column_total_table(table_name)
         column_total_insert(node.father)
-        columnas_insert    = count # column_total_insert(node)
+        # columnas_insert    = count # column_total_insert(node)
 
-        print(valores_a_insertar, columnas_tabla, count)
+        print(valores_a_insertar, columnas_tabla, columnas_insert)
 
         if valores_a_insertar != columnas_tabla or valores_a_insertar != columnas_insert or columnas_tabla != columnas_insert:
             print("ERROR: SINTAX INSERT DATA")
             exit()
-        count = 0
+        
+        columnas_insert    = 0
+        valores_a_insertar = 0
+        columnas_tabla     = 0
+
+        func_insert_table(table_values, symbol_table)
 
     if node.symbol.symbol == 'COLUMNAME' and node.children[0].symbol.symbol != 'comma' and node.children[0].symbol.symbol != 'e':
         # print(node.children[0].lexeme)
@@ -196,6 +210,8 @@ result = False
 
 def func_insert_table(table_values, symbol_table):
     global result
+    data = insert_table_node(None,None,None)
+
     for symbol in symbol_table:
 
         if symbol.type == 'tabla':
@@ -212,10 +228,12 @@ def func_insert_table(table_values, symbol_table):
                     break
 
                 else:
+                    table_values.remove(value)
                     result = False
                     break
 
     if not result:
         print("Error: Datos no compatibles")
+        exit()
     else:
-        print('\nInsert exitoso')
+        print('Insert exitoso')

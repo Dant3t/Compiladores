@@ -4,15 +4,14 @@ crear tabla producto (
     existe boleano
 ) ; 
 
-insertar dentro producto (id, cantidad, existe) valores (1, 50, verdadero) ;
-        
+insertar dentro producto (id, cantidad, existe) valores (1, 1, verdadero) ;
+
+
 crear tabla clientes (
     id entero,
-    producto verdadero
+    producto boleano
 ) ;
 
-insertar dentro clientes (id, producto) valores (1, 1) ;
 
-
-
+insertar dentro clientes (producto, id) valores (1, verdadero) ;
 

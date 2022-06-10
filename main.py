@@ -16,7 +16,7 @@ dot =  LL1.print_tree(root, node_list, info = False)
 symbol_table = symbol.find_var_declaration(root)
 value_table = symbol.find_var_insert(root)
 
-symbol.func_insert_table(value_table, symbol_table)
+# symbol.func_insert_table(value_table, symbol_table)
 
 for symbol in symbol_table:
     # print(symbol.identifier, symbol.type, symbol.category, symbol.father)
