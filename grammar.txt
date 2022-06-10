@@ -21,6 +21,7 @@ ELEMENT -> ''
 TYPE -> entero
 TYPE -> varchar
 TYPE -> serial
+TYPE -> boleano
 
 CONSTRUCT -> no nulo CONSTRUCT
 CONSTRUCT -> clave primaria CONSTRUCT
@@ -37,6 +38,9 @@ COLUMNAME -> comma COLUMNAME
 COLUMNAME -> ''
 
 VALUES -> VALUE
-VALUE -> TYPE VALUE
+VALUE -> TRM VALUE
 VALUE -> comma VALUE
 VALUE -> ''
+
+TMR -> entero
+TRM -> boleano

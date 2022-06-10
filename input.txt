@@ -1,7 +1,18 @@
 crear tabla producto (
-    id serial clave primaria,
-    nombre_producto varchar unico no nulo,
-    correo varchar no nulo unico
+    id entero clave primaria,
+    cantidad entero unico no nulo,
+    existe boleano
 ) ; 
+
+insertar dentro producto (id, cantidad, existe) valores (1, 50, verdadero) ;
         
-insertar dentro producto (id, nombre_producto, correo) valores (Verdadero, 2, 3) ;
+crear tabla clientes (
+    id entero,
+    producto verdadero
+) ;
+
+insertar dentro clientes (id, producto) valores (1, 1) ;
+
+
+
+

@@ -20,7 +20,7 @@ reserved = {
    'dentro'         : 'dentro',
    'valores'        : 'valores',
    'entero'         : 'entero',
-   'bolenado'       : 'boleando'
+   'boleano'        : 'boleano'
 }
 
 tokens = [
@@ -31,9 +31,7 @@ tokens = [
     'rpar',
     'keyword',
     'id',
-    'type',
     'times',
-    'boleano'
 ] + list(reserved.values())
 
 # Regular expression rules for simple tokens
@@ -53,7 +51,7 @@ def t_entero(t):
     return t
 
 def t_boleano(t):
-    r'Verdadero | Falso '
+    r'verdadero | falso '
     return t
 
 def t_id(t):
