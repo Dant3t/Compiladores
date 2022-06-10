@@ -2,6 +2,13 @@ import ply.lex as lex
 
  # List of token names.   This is always required
 
+#  'regex': r"\/\*[\s\S]*?\*\/",
+#  'type': 'comment'
+
+#  'regex': r"(\"|')(\\[\s\S]|(?!\1)[^\\]|\1\1)*\1",
+#  'type': 'string'
+
+
 reserved = {
    'crear'          : 'crear',
    'tabla'          : 'tabla',

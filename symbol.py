@@ -7,10 +7,14 @@ current_function = None
 
 
 class insert_table_node:
-    def __init__(self, typ, table_name, columna = None):
-        self.type = typ
+    def __init__(self, identifier, table_name = None, typ = None, columna = None):
+        self.identifier = identifier
         self.table_name = table_name
-        self.columna = columna
+        self.type       = typ
+        self.columna    = columna
+
+    def set_type(self, typ):
+        self.type       = typ
 
 class symbol_table_node:
     def __init__(self, identifier, typ, category, father = None, line = None):        
@@ -31,20 +35,6 @@ def find_symbol(identifier, father):
         if symbol.identifier == identifier and symbol.father == father:
             return symbol
 
-
-# def find_father(identifier, node):
-#     for nod in node.children:
-#         if nod.lexeme == identifier and nod.father.symbol.symbol == 'CREATE':
-#             # for child in nod.father.children:
-#             #     print(child.symbol.symbol)
-#             # print(nod.father.children[4].symbol.symbol)
-#             return node.father
-#         # print(nod.symbol.symbol) 
-#         find_father(identifier, nod)
-
-def compare_symbol(identifier, value):
-    print()
-
 def remove_symbol(father):
     for symbol in symbol_table:
         # print(symbol_table.index(symbol))
@@ -58,16 +48,22 @@ exits_insert = False
 def find_var_declaration(node):
     global current_function
 
-    if node.symbol.symbol == 'CREATE':
+    if node.symbol.symbol == 'CREATE' or node.symbol.symbol == 'INSERT':
         current_function = node.children[2].lexeme # obtenmos el nombre de la función
 
     # if node.symbol.symbol == 'dotcomma' and node.father.symbol.symbol == 'CREATE':
     #     remove_symbol(current_function)  # eliminar todos los simbolos de current_function
     #     current_function = None
+   
+    if node.symbol.symbol == 'id' and node.father.symbol.symbol == 'COLUMNAME':
+        # if node.father.father.father.symbol.symbol == "INSERT":
+        #     # add_identifier_insert(node.father.father.father.children[2].lexeme)
+        add_identifier_insert(node.lexeme, current_function)
 
     if node.symbol.symbol == 'dotcomma' and node.father.symbol.symbol == 'INSERT':
         if not exists_table(current_function):
             print("ERROR: TABLA NO EXISTENTE")
+            exit()
   
     if node.symbol.symbol == 'id':
         # preguntamos si el hermano es un type
@@ -104,10 +100,9 @@ def find_var_declaration(node):
 
 table_values = []
 
-# def find_values(node):
-#     for node in node.children:
-#         print(node.symbol.symbol)
-#     find_values(node)
+def add_identifier_insert(identifier, table_name):
+    node_insert  = insert_table_node(identifier, table_name)
+    table_values.append(node_insert) 
 
 def exists_table (identifier, father=None):
     for symbol in symbol_table:
@@ -146,9 +141,12 @@ def column_total_values(identifier):
             valores_a_insertar+=1
 
 def add_insert(typ, table_name, columna):
-    node_insert  = insert_table_node(typ, table_name, columna)
-    table_values.append(node_insert) 
+    for value in table_values:
+        if value.table_name == table_name and value.type == None:
+            # print(typ)
+            value.set_type(typ)
 
+            return
 columna = 0
 table_name = None
 
@@ -176,7 +174,7 @@ def find_var_insert(node):
         column_total_insert(node.father)
         # columnas_insert    = count # column_total_insert(node)
 
-        print(valores_a_insertar, columnas_tabla, columnas_insert)
+        # print(valores_a_insertar, columnas_tabla, columnas_insert)
 
         if valores_a_insertar != columnas_tabla or valores_a_insertar != columnas_insert or columnas_tabla != columnas_insert:
             print("ERROR: SINTAX INSERT DATA")
@@ -210,7 +208,6 @@ result = False
 
 def func_insert_table(table_values, symbol_table):
     global result
-    data = insert_table_node(None,None,None)
 
     for symbol in symbol_table:
 
@@ -219,21 +216,25 @@ def func_insert_table(table_values, symbol_table):
 
         for value in table_values:
 
-            if symbol.father == value.table_name:
+            if symbol.father == value.table_name and symbol.identifier == value.identifier:
                 
                 if symbol.type == value.type:
-                    # print(symbol.type, value.type)
+                    print(symbol.type, value.type)
+                    print(symbol.identifier, value.identifier)
                     table_values.remove(value)
                     result = True
                     break
 
                 else:
+                    print("-----------------------------------")
+                    print(symbol.type, value.type)
+                    print(symbol.identifier, value.identifier)
                     table_values.remove(value)
                     result = False
+                    if not result:
+                        print("ERROR: DATOS NO COMPATIBLES")
+                        exit()
                     break
 
-    if not result:
-        print("Error: Datos no compatibles")
-        exit()
-    else:
-        print('Insert exitoso')
+    if result:
+        print('INSERT EXITOSO')
