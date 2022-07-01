@@ -1,0 +1,121 @@
+crear tabla clientes (
+  idCliente varchar,
+  NomCliente varchar,
+  DirCliente varchar,
+  idpais varchar,
+  fonoCliente varchar
+);
+
+crear tabla producto (
+    idproducto entero,
+    nombreProducto varchar,
+    precioProducto entero
+);
+
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (1, "Queso", 2);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (2, "Pescado", 12);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (3, "Carne", 7);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (4, "Yogurt", 9);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (5, "Leche", 6);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (6, "Papa", 3);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (7, "Zanahoria", 414);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (8, "Cerveza",33);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (9, "Caja", 12);
+
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("ALFKI", "Alfreds Futterkiste", "Obere Str. 57", "002", "030-0074321");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("ANATR", "Ana Trujillo Emparedados y helados", "Avda. de la Constitucion 2222", "005", "(5) 555-4729");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("ANTON", "Antonio Moreno Taqueria","Mataderos  2312", "007", "5 555-3932");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("AROUT", "Around the Horn","120 Hanover Sq.", "004", "(71) 555-7788");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("BERGS", "Berglunds snabbksp","Berguvsvagen  8", "006", "0921-12 34 65");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("BLAUS", "Blauer See Delikatessen", "Forsterstr. 57", "001", "0621-08460");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("BLONP", "Blondel p�re et fils", "24, place Kleber Estrasbur","008", "88.60.15.31");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("BOLID", "Bolido Comidas preparadas", "C Araquil, 67", "009",  "91 555 91 99");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("BONAP", "Bon app", "12, rue des Bouchers", "001", "91.24.45.41");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("BOTTM", "Bottom-Dollar Markets", "23 Tsawassen Blvd.", "003", "(604) 555-3745");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("BSBEV", "B Beverages",  "Fauntleroy Circus", "009", "(71) 555-1212");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("CACTU", "Cactus Comidas para llevar", "Cerrito 333", "002", "(1) 135-4892");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("CENTC", "Centro comercial Moctezuma","Sierras de Granada 9993", "008", "(5) 555-7293");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("CHOPS", "Chop-suey Chinese", "Hauptstr. 29", "001", "999999999");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("COMMI", "Comercio Mineiro", "Av. dos Lusiadas, 23", "004", "999999992");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("CONSH", "Consolidated Holdings", "Berkeley Gardens\r\n12  Brewery", "005", "(71) 555-2282");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("DRACD", "Drachenblut Delikatessen", "Walserweg 21", "006", "0241-059428");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("DUMON", "Du monde entier", "67, rue des Cinquante Otages", "007", "40.67.89.89");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("EASTC", "Eastern Connection", "35 King George", "005", "(71) 555-3373");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("ERNSH", "Ernst Handel", "Kirchgasse 6", "001", "7675-3426");
+
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("FAMIA", "Familia Arquibaldo", "Rua Oros, 92", "004",  "(11) 555-9857");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("FISSA", "FISSA Fabrica Inter. Salchichas S.A.", "C Moralzarzal, 86", "003", "(91) 555 55 93");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("FOLIG", "Folies urmandes", "184, chaussee de Tournai", "009", "20.16.10.17");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("FOLKO", "Folk och f HB", "kergatan 24", "003", "12391241");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("FRANK", "Frankenversand","Berliner Platz 43", "001", "089-0877451");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("FRANR", "France restauration", "54, rue Royale", "008", "40.32.21.20");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("FRANS", "Franchi S.p.A.", "Via Monte Bianco 34", "001", "011-4988261");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("FURIB", "Furia Bacalhau e Frutos do Mar", "Jardim das rosas n. 32", "008", "(1); 354-2535");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("GALED", "Galeria del gastronomo", "Rambla de Catalu�a, 23", "004", "(93); 203 4561");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("DOS", "dos Cocina Tipica", "C/ Romero, 33",  "007", "9999999123");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("URL", "urmet Lanchonetes", "Av. Brasil, 442", "008", "(11); 555-9482");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("GREAL", "Great Lakes Food Market", "2732 Baker Blvd.", "001", "(503); 555-7555");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("GROSR", "GROSELLA-Restaurante", "5� Ave. Los Palos Grandes", "002", "(2); 283-3397");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("HANAR", "Hanari Carnes", "Rua do Pa�o, 67", "001","(21); 555-8765");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("HILAA", "HILARIoN-Abastos", "Carrera 22 con Ave. Carlos Soublette #8-35", "008", "(5); 555-1948");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("HUNGC", "Hungry Coyote Import Store", "City Center Plaza\r\n516 Main St.", "009", "(503); 555-2376");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("HUN", "Hungry Owl All-Night Grocers", "8 Johnstown Road", "005","2967 3333");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("ISLAT", "Island Trading","Garden House\r\nCrowther Way", "003","9991123");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("KOENE", "K�niglich Essen", "Maubelstr. 90", "007","0555-09876");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("LACOR", "La corne deabondance", "67, avenue de Europe", "009", "30.59.84.10");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("LAMAI", "La maison de Asie", "1 rue Alsace-Lorraine", "002", "61.77.61.11");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("LAUGB", "Laughing Bacchus Wine Cellars",  "1900 Oak St.", "007", "(604); 555-7293");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("LAZYK", "Lazy K Kountry Store",  "12 Orchestra Terrace", "005", "(509); 555-6221");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("LEHMS", "Lehmanns Marktstand",  "Magazinweg 7", "004", "069-0245874");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("LETSS", "Lets Stop N Shop",  "87 Polk St.\r\nSuite 5", "001", "999999995");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("LILAS", "LILA-Supermercado",  "Carrera 52 con Ave. Bolivar #65-98 Llano Lar","008", "(9); 331-7256");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("LINOD", "LINO-Delicateses",  "Ave. 5 de Mayo Porlamar", "002", "(8); 34-93-93");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("LONEP", "Lonesome Pine Restaurant",  "89 Chiaroscuro Rd.", "001", "(503); 555-9646");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("MAGAA", "Magazzini Alimentari Riuniti",  "Via Ludovico il Moro 22", "007", "035-640231");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("MAISD", "Maison Dewey",  "Rue Joseph-Bens 532", "003", "(02); 201 24 68");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("MEREP", "M�re Paillarde",  "43 rue St. Laurent", "006", "(514); 555-8055");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("MORGK", "Morgenstern Gesundkost",  "Heerstr. 22", "009",  "999999992");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("NORTS", "North/South",  "South House\r\n300 Queensbridge", "005","(71); 555-2530");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("OCEAN", "Oceano Atlantico Ltda.",  "Ing. Gustavo Moncada 8585\r\nPiso 20-A", "001", "(1); 135-5535");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("OLDWO", "Old World Delicatessen",  "2743 Bering St.", "004",  "(907); 555-2880");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("OTTIK", "Ottilies K�seladen",  "Mehrheimerstr. 369", "003", "0221-0765721");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("PARIS", "Paris specialites",  "265, boulevard Charonne", "008","(1); 42.34.22.77");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("PERIC", "Pericles Comidas clasicas",  "Calle Dr. Jorge Cash 321", "003","(5); 545-3745");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("PICCO", "Piccolo und mehr",  "Geislweg 14", "002", "6562-9723");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("PRINI", "Princesa Isabel Vinhos",  "Estrada da sa�de n. 58", "004", "00123914");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("QUEDE", "Que Delicia",  "Rua da Panificadora, 12", "004", "(21); 555-4545");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("QUEEN", "Queen Cozinha",  "Alameda dos Can�rios, 891", "009", "38473242");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("QUICK", "QUICK-Stop", "Taucherstra�e 10", "006","1293123");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("RANCH", "Rancho grande",  "Av. del Libertador 900", "001", "(1); 123-5556");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("RATTC", "Rattlesnake Canyon Grocery",  "2817 Milton Dr.", "001", "(505); 555-3620");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("REGGC", "Reggiani Caseifici",  "Strada Provinciale 124", "003", "0522-556722");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("RICAR", "Ricardo Adocicados",  "Av. Copacabana, 267", "007", "478234723");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("RICSU", "Richter Supermarkt",  "Grenzacherweg 237", "003", "923747234");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("ROMEY", "Romero y tomillo",  "Gran Via, 1", "009", "(91); 745 6210");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("SANTG", "Sante urmet",  "Erling Skakkes gate 78", "002",  "07-98 92 47");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("SAVEA", "Save-a-lot Markets", "187 Suffolk Ln.", "005",  "(208); 555-8097");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("SEVES", "Seven Seas Imports", "90 Wadhurst Rd.", "008",  "(71); 555-5646");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("SIMOB", "Simons bistro", "Vinb�ltet 34", "006", "31 13 35 57");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("SPECD", "Specialites du monde", "25, rue Lauriston", "003", "(1); 47.55.60.20");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("SPLIR", "Split Rail Beer & Ale", "P.O. Box 555", "004", "(307); 555-6525");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("SUPRD", "Supr�mes delices", "Boulevard Tirou, 255", "009",  "(071); 23 67 22 21");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("THEBI", "The Big Cheese", "89 Jefferson Way\r\nSuite 2", "003",  "123415");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("THECR", "The Cracker Box","55 Grizzly Peak Rd.", "007",  "(406); 555-8083");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("TOMSP", "Toms Spezialit�ten", "Luisenstr. 48", "004", "0251-035695");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("TORTU", "Tortuga Restaurante", "Avda. Azteca 123", "006", "12312");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("TRADH", "Tradi��o Hipermercados", "Av. In�s de Castro, 414", "009","(11); 555-2168");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("TRAIH", "Trails Head urmet Provisioners","722 DaVinci Blvd.", "001",  "(206); 555-2174");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("VAFFE", "Vaffeljernet","Smagsl�get 45", "003", "86 22 33 44");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("VICTE", "Victuailles en stock","2, rue du Commerce", "007", "78.32.54.87");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("VINET", "Vins et alcools Chevalier","59 rue de lAbbaye", "005", "26.47.15.11");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("WANDK", "Die Wandernde Kuh","Adenauerallee 900", "008", "0711-035428");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("WARTH", "Wartian Herkku", "Torikatu 38", "002", "981-443655");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("WELLI", "Wellington Importadora", "Rua do Mercado, 12", "005", "91823-123");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("WHITC", "White Clover Markets","305 - 14th Ave. S.\r\nSuite 3B", "003", "(206); 555-4115");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("WILMK", "Wilman Kala","Keskuskatu 45", "007", "90-224 8858");
+insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente) valores ("WOLZA", "Wolski  Zajazd", "ul. Filtrowa 68", "002", "(26); 642-7012");
+
+
+seleccionar * desde producto;
+
+seleccionar (idCliente) desde clientes donde idCliente == "ALFKI"; 

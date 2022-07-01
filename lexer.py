@@ -27,38 +27,69 @@ reserved = {
    'dentro'         : 'dentro',
    'valores'        : 'valores',
    'entero'         : 'entero',
-   'boleano'        : 'boleano'
+   'booleano'       : 'booleano',
+   'donde'          : 'donde',
+   'y'              : 'y'
 }
 
 tokens = [
     'number',
+    'bool',
+    'string',
     'dotcomma',
     'comma',
     'lpar',
     'rpar',
-    'keyword',
     'id',
     'times',
+    'plus',
+    'comentario',
+    'equal',
+    'lt',
+    'gt',
+    'le',
+    'ge',
+    'eq',
+    'ne'
 ] + list(reserved.values())
 
 # Regular expression rules for simple tokens
+t_lt               = r'\<'
+t_gt               = r'\>'
+t_le               = r'\<\='
+t_ge               = r'\>\='
+t_eq               = r'\=\='
+t_ne               = r'\!\='
+
 t_lpar     = r'\('
 t_rpar     = r'\)'
 t_comma    = r'\,'
 t_dotcomma = r'\;'
 t_times    = r'\*'
+t_plus     = r'\+'
+t_equal    = r'\='
 
 t_ignore   = ' \t'
 
 # t_keyword    = r'\b(AÑADIR|DESPUÉS|TODO|ALTERAR|NADA|COMO|ASCENDENTE|AUTO_INCREMENTAR|INICIAR|EMPEZAR|ROMPER|EN_CASCADA|RESTRICCIÓN|CONTINUA|DECLARAR|POR_DEFECTO|DESC|DESCRIBIR|HACER|DOBLE|SOLTAR|ELSE(IF)?|FIN|MOTOR|ENUM|EXISTE|SALIR|ARCHIVO|PRIMERO|FLOTANTE|FOR(EACH_ROW)?|FORÁNEO|FUNCIÓN|GLOBAL|GRUPO|IF|INDEX|INTERNAMENTE|INSERTAR|DENTRO_DE|ITERAR|UNIR|CLAVES?|ÚLTIMO|IZQUIERDA|LÍMITE|BUCLE|TEXTO|MODIFICAR|MES|SOBRE|ORDENAR|REFERENCIAS|RESTRINGIR|DERECHA|FILA|ESTADO|INDEFINIDO|UNICO|ACTUALIZAR|UTILIZAR|VALORES)\b'
 
-def t_entero(t):
+def t_comentario(t):
+    r"\/\*[\s\S]*?\*\/"
+    return t
+
+def t_number(t):
     r'\d+'
     t.value = int(t.value)  # guardamos el valor del lexema  
     return t
 
-def t_boleano(t):
+def t_bool(t):
     r'verdadero | falso '
+    return t
+
+def t_string(t): 
+    # r"(\"|')(\\[\s\S]|(?!\1)[^\\]|\1\1)*\1",
+    # r'(\"|\')([^\\\n]|(\\.))*?(\"|\')'
+    r'\"([^\\\n]|(\\.))*?\"'
     return t
 
 def t_id(t):

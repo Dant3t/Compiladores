@@ -1,7 +1,6 @@
 import pandas as pd
 from lexer import tokens
 
-
 counter = 0
 dot = ''
 # print(syntax_table)
@@ -80,6 +79,7 @@ def print_tree_recursive(node):
         dot += "} \n" 
 
 def update_stack(root, node_list, syntax_table, stack, current_token):
+    # print(stack[0].symbol, current_token)
     production = syntax_table.loc[stack[0].symbol, current_token]
 
     if (str(production) == "nan"):
@@ -133,7 +133,7 @@ class node_parser:
         self.type = None # es para guardar el tipo de dato, lo usaremos en el analizador semantico
         self.visited = False # para saber si el nodo fue visitado, lo usaremos en el analizador semantico
 
-syntax_table = pd.read_csv("grammar_v4.csv", index_col=0)
+syntax_table = pd.read_csv("grammar_v6.csv", index_col=0)
 
 # insert the first elements in STACK
 symbol_1 = node_stack('$', True)

@@ -8,7 +8,6 @@ STATEMENT -> INSERT
 STATEMENT -> SELECT
 STATEMENT -> UPDATE
 STATEMENT -> DELETE
-STATEMENT -> comentario
 
 DELETE -> eliminar desde id dotcomma
 
@@ -29,27 +28,7 @@ CONSTRUCT -> clave primaria CONSTRUCT
 CONSTRUCT -> unico CONSTRUCT
 CONSTRUCT -> ''
 
-SELECT -> seleccionar PARAMS desde id CONDITIONAL dotcomma
-
-PARAMS -> times
-PARAMS -> lpar PARAM rpar
-
-PARAM -> NAMEPARAM
-NAMEPARAM -> id NAMEPARAM
-NAMEPARAM -> comma NAMEPARAM
-NAMEPARAM -> ''
-
-CONDITIONAL -> donde id OPERATOR TRM CONDITION
-CONDITIONAL -> ''
-CONDITION -> y id OPERATOR TRM CONDITION
-CONDITION -> ''
-
-OPERATOR -> lt
-OPERATOR -> gt
-OPERATOR -> le
-OPERATOR -> ge
-OPERATOR -> eq
-OPERATOR -> ne
+SELECT -> seleccionar times desde id dotcomma
 
 INSERT -> insertar dentro id lpar COLUMNAMES rpar valores lpar VALUES rpar dotcomma
 
@@ -59,14 +38,14 @@ COLUMNAME -> comma COLUMNAME
 COLUMNAME -> ''
 
 VALUES -> VALUE
-VALUE -> TRM VALUE
-VALUE -> SYMBOL VALUE
+VALUE -> EXPRESSION VALUE
 VALUE -> comma VALUE
 VALUE -> ''
 
-SYMBOL -> plus
-SYMBOL -> time
+EXPRESSION -> EXP
+EXP -> TMR EXP
+EXP -> plus EXP
 
-TRM -> number 
+TMR -> number
 TRM -> bool
 TRM -> string

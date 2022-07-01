@@ -1,20 +1,25 @@
 crear tabla producto (
-    id entero clave primaria,
-    cantidad entero unico no nulo,
-    existe boleano,
-    ent entero
-) ; 
+    idproducto entero,
+    nombreProducto varchar,
+    precioProducto entero
+);
 
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (1, "Queso", 2);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (2, "Pescado", 12);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (3, "Carne", 7);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (4, "Yogurt", 9);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (5, "Leche", 6);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (6, "Papa", 3);
 
-insertar dentro producto (cantidad, id, existe, ent) valores (1, 2, verdadero, 4) ;
+/*
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (7, "Zanahoria", 414);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (8, "Cerveza",33);
+insertar dentro producto (idproducto, nombreProducto, precioProducto) valores (9, "Caja", 12);
+*/
 
+seleccionar * desde producto ;
 
-crear tabla clientes (
-    id entero,
-    producto boleano
-) ;
+seleccionar (idproducto, nombreProducto) desde producto donde nombreProducto == "Pescado"; 
 
-insertar dentro clientes (id, producto) valores (1, verdadero) ;
-
-
+/* seleccionar (idproducto, nombreProducto) desde producto donde idproducto == 1 y nombreProducto == "Cerveza"; */
 
