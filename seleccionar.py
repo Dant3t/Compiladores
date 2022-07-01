@@ -106,23 +106,19 @@ def print_select_conditional(identifier):
     # filename = os.path.join(current_dir, pFile) 
 
     syntax_table = pd.read_csv(pFile, usecols=columns, sep=',')
-    # print(syntax_table)
+
     if len(values_condt) == 3:
-            field, operator, value = values_condt
-            expr = f"{field} {operator} {value}"
-            print(syntax_table.query(expr))
-            
-        
-
+        field, operator, value = values_condt
+        expr = f"{field} {operator} {value}"
+        print(syntax_table.query(expr))
+    
     with open(pFile, newline='') as File:  
-        reader = csv.reader(File)
-        for row in reader:
-            for value in row:
-                print(value)
-                continue
-            # print(row)
-
-
+            reader = csv.reader(File)
+            for row in reader:
+                for value in row:
+                    print(value)
+                    continue
+                # print(row)
 
     # produccion   = syntax_table.loc[2, 'nombreProducto'] 
     # print(produccion)
@@ -130,4 +126,4 @@ def print_select_conditional(identifier):
     print("---------------------------------------------------")
 
     for i in range(len(columns)):
-        columns.pop()
+        columns.pop() 

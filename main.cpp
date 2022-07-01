@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream> 
 using namespace std;  
- 
+
 int main () {
     ofstream myfile1;
     myfile1.open ("./Tables/clientes.csv");
