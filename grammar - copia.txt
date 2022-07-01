@@ -8,7 +8,7 @@ STATEMENT -> INSERT
 STATEMENT -> SELECT
 STATEMENT -> UPDATE
 STATEMENT -> DELETE
-
+ 
 DELETE -> eliminar desde id dotcomma
 
 CREATE -> crear tabla id lpar ELEMENTS rpar dotcomma

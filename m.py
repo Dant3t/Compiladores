@@ -68,4 +68,4 @@ def find_var_declaration(node):
 find_var_declaration(root)
 
 for symbol in symbol_table:
-  print(symbol.identifier, symbol.type, symbol.category, symbol.father)
+  print(symbol.identifier, symbol.type, symbol.category, symbol.father) 

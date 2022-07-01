@@ -52,7 +52,7 @@ tokens = [
     'eq',
     'ne'
 ] + list(reserved.values())
-
+ 
 # Regular expression rules for simple tokens
 t_lt               = r'\<'
 t_gt               = r'\>'

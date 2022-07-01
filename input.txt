@@ -22,4 +22,4 @@ seleccionar * desde producto ;
 seleccionar (idproducto, nombreProducto) desde producto donde nombreProducto == "Pescado"; 
 
 /* seleccionar (idproducto, nombreProducto) desde producto donde idproducto == 1 y nombreProducto == "Cerveza"; */
-
+ 

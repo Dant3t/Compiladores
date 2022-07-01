@@ -91,4 +91,4 @@ def generarCode(symbol_table, table_generate_code = []):
     file.write("    return 0;" + os.linesep)
     file.write("}" + os.linesep)
 
-    file.close()
+    file.close() 

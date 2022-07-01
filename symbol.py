@@ -18,7 +18,7 @@ def find_symbol(identifier, father):
     for symbol in symbol_table:
         if symbol.identifier == identifier and symbol.father == father:
             return symbol
-
+ 
 def remove_symbol(father):
     for symbol in symbol_table:
         # print(symbol_table.index(symbol))

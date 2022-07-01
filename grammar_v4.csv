@@ -14,4 +14,4 @@ COLUMNAMES,,,,COLUMNAMES -> COLUMNAME,,,,,COLUMNAMES -> COLUMNAME,COLUMNAMES -> 
 COLUMNAME,,,,COLUMNAME -> id COLUMNAME,,,,,COLUMNAME -> '',COLUMNAME -> comma COLUMNAME,,,,,,,,,,,,,,,
 VALUES,,,,,,,,,VALUES -> VALUE,VALUES -> VALUE,VALUES -> VALUE,,,VALUES -> VALUE,,,,,,,,,,,
 VALUE,,,,,,,,,VALUE -> '',VALUE -> comma VALUE,VALUE -> TRM VALUE,,,VALUE -> TRM VALUE,,,,,,,,,,,
-TRM,,,,,,,,,,,TRM -> entero,,,TRM -> boleano,,,,,,,,,,,
+TRM,,,,,,,,,,,TRM -> entero,,,TRM -> boleano,,,,,,,,,,, 

@@ -111,7 +111,7 @@ def print_select_conditional(identifier):
             field, operator, value = values_condt
             expr = f"{field} {operator} {value}"
             print(syntax_table.query(expr))
-            print("---_¨_¨_-----------------")
+            
         
 
     with open(pFile, newline='') as File:  

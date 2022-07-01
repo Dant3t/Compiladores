@@ -61,7 +61,7 @@ def print_tree(node, node_list, info = False):
     dot += "}"
 
     return dot
-
+ 
 def print_tree_recursive(node):
     global dot
     tmp = []

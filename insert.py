@@ -86,7 +86,7 @@ class node_generate_code:
         self.typ        = typ
         self.value      = value
         self.visitado   = False
-
+ 
 def func_plus(father, identifier, typ, values = []):
     global table_generate_code
 
