@@ -112,13 +112,13 @@ def print_select_conditional(identifier):
         expr = f"{field} {operator} {value}"
         print(syntax_table.query(expr))
     
-    with open(pFile, newline='') as File:  
-            reader = csv.reader(File)
-            for row in reader:
-                for value in row:
-                    print(value)
-                    continue
-                # print(row)
+    """ with open(pFile, newline='') as File:  
+        reader = csv.reader(File)
+        for row in reader:
+            for value in row:
+                print(value)
+                continue
+            # print(row)
 
     # produccion   = syntax_table.loc[2, 'nombreProducto'] 
     # print(produccion)
@@ -126,4 +126,4 @@ def print_select_conditional(identifier):
     print("---------------------------------------------------")
 
     for i in range(len(columns)):
-        columns.pop() 
+        columns.pop() """

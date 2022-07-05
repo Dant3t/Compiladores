@@ -118,4 +118,8 @@ insertar dentro clientes (idCliente, NomCliente, DirCliente, idpais, fonoCliente
 
 seleccionar * desde producto;
 
-seleccionar (idCliente) desde clientes donde idCliente == "ALFKI"; 
+seleccionar (idCliente) desde clientes donde idCliente == "WOLZA"; 
+seleccionar (idCliente) desde clientes donde idCliente == "(91); 745 6210"; 
+seleccionar (idCliente) desde clientes donde idCliente == "Wellington Importadora"; 
+seleccionar (idCliente) desde clientes donde idCliente == "Ave. 5 de Mayo Porlamar"; 
+seleccionar (idCliente) desde clientes donde idCliente == "PARIS"; 
